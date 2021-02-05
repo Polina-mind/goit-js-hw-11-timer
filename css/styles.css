@@ -18,8 +18,18 @@ body {
 }
 
 h1 {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   color: rgb(51, 51, 51);
+}
+
+.text {
+  margin-top: 50px;
+
+  color: rgb(39, 103, 187);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1, 88;
+  text-align: center;
 }
 
 .timer {
