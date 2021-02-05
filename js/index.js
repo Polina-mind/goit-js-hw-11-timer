@@ -7,7 +7,7 @@ const refs = {
 
 const countdownTimer = {
   intervalId: null,
-  targetDate: new Date("Jul 17, 2021"),
+  targetDate: new Date("Jul 15, 2021"),
 
   start() {
     this.intervalId = setInterval(() => {
