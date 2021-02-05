@@ -16,7 +16,7 @@ class CountdownTimer {
   start() {
     refs.header.insertAdjacentHTML(
       "beforeend",
-      `<p class="text">До ${this.targetDate} осталось:</p>`
+      `<p class="text">До ${this.targetDate.toDateString()} осталось:</p>`
     );
 
     this.intervalId = setInterval(() => {
