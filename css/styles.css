@@ -16,7 +16,7 @@ body {
 .container {
   margin-left: auto;
   margin-right: auto;
-  padding: 50px;
+  padding: 10px;
   width: 700px;
   text-align: center;
 }
@@ -24,6 +24,7 @@ body {
 h1 {
   margin-top: 50px;
   margin-bottom: 50px;
+  font-size: 24px;
   color: rgb(51, 51, 51);
 }
 
@@ -55,24 +56,26 @@ input {
 
 .error {
   margin: 0;
-  margin-left: 55%;
+  margin-left: 125px;
   color: red;
 }
 
 .timer {
+  margin-right: auto;
+  margin-left: auto;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 5px;
 }
 
 .value {
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 1.88;
   color: rgb(52, 82, 172);
 }
 
 .label {
-  font-size: 18px;
+  font-size: 14px;
   color: rgb(51, 51, 51);
 }

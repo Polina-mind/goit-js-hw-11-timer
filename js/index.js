@@ -28,6 +28,10 @@ function handleInput(e) {
 
   const inputData = e.currentTarget.value;
   if (inputData === "") {
+    refs.days.textContent = "00";
+    refs.hours.textContent = "00";
+    refs.mins.textContent = "00";
+    refs.secs.textContent = "00";
     return;
   }
 
