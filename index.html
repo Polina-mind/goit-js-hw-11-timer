@@ -6,37 +6,71 @@
     <title>Timer</title>
 
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
   <body>
-    <h1>Таймер обратного отсчета</h1>
+    <div class="container">
+      <div class="clock">
+        <div class="inside">
+          <div class="days-of-week">
+            <span id="sun">SUN</span>
+            <span id="mon">MON</span>
+            <span id="tus">TUS</span>
+            <span id="wed">WED</span>
+            <span id="thu">THU</span>
+            <span id="fri">FRI</span>
+            <span id="sat">SAT</span>
+          </div>
+          <br />
+          <div class="time">
+            <span id="hours">01</span> : <span id="min">01</span> :
+            <span id="sec">01</span> <span id="ampm">AM</span>
+          </div>
+          <div class="date">
+            <span id="year">2023</span>
+            <span id="month">JAN</span>
+            <span id="day">01</span>
+          </div>
+        </div>
+      </div>
 
-    <div class="timer" id="timer-1">
-      <div class="field">
-        <span class="value" data-value="days">11</span>
-        <span class="label">Days</span>
-      </div>
-    
-      <div class="field">
-        <span class="value" data-value="hours">11</span>
-        <span class="label">Hours</span>
-      </div>
-    
-      <div class="field">
-        <span class="value" data-value="mins">11</span>
-        <span class="label">Minutes</span>
-      </div>
-    
-      <div class="field">
-        <span class="value" data-value="secs">11</span>
-        <span class="label">Seconds</span>
+      <h1>Скільки днів до важливої дати?</h1>
+
+      <label
+        >Введіть дату у форматі "DD.MM.YYYY":<input type="input" maxlength="10"
+      /></label>
+      <p class="error"></p>
+
+      <p class="text"></p>
+
+      <div class="timer" id="timer-1">
+        <div class="field">
+          <span class="value" data-value="days">00</span>
+          <span class="label">днів</span>
+        </div>
+
+        <div class="field">
+          <span class="value" data-value="hours">00</span>
+          <span class="label">годин</span>
+        </div>
+
+        <div class="field">
+          <span class="value" data-value="mins">00</span>
+          <span class="label">хвилин</span>
+        </div>
+
+        <div class="field">
+          <span class="value" data-value="secs">00</span>
+          <span class="label">секунд</span>
+        </div>
       </div>
     </div>
 
+    <script src="./js/clock.js" type="module"></script>
     <script src="./js/index.js" type="module"></script>
   </body>
 </html>

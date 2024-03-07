@@ -1,0 +1,53 @@
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 35px;
+  width: 400px;
+  background-color: #6a84b7;
+  color: #fff;
+  font-family: "Quicksand", "Helvetica", Arial, sans-serif;
+  font-weight: lighter;
+}
+
+.inside {
+  width: 100%;
+  text-align: center;
+  background-color: #1f3466;
+  padding: 35px 0;
+}
+
+.days-of-week {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #ffffff33;
+}
+
+.active {
+  color: #ffffff;
+}
+
+.time {
+  margin-top: 10px;
+  font-size: 2.5em;
+}
+
+.ampm {
+  font-size: 1.5em;
+}
+
+.date {
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.icon img {
+  width: 30px;
+  height: 30px;
+}
