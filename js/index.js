@@ -12,15 +12,31 @@ const refs = {
 let userData;
 let myTimer;
 
-refs.input.addEventListener("input", function (e) {
-  this.value = this.value.replace(/,/g, ".");
-});
+refs.input.addEventListener("input", handleInputValue);
 refs.input.addEventListener("blur", handleInput);
 refs.input.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     handleInput(e);
   }
 });
+
+function handleInputValue(e) {
+  const inputValue = e.currentTarget.value;
+
+  if (inputValue.length > 2 && inputValue[2] !== ".") {
+    e.currentTarget.value =
+      inputValue[2] === ","
+        ? inputValue.replace(/,/g, ".")
+        : inputValue.slice(0, 2) + "." + inputValue.slice(2);
+  }
+
+  if (inputValue.length > 5 && inputValue[5] !== ".") {
+    e.currentTarget.value =
+      inputValue[5] === ","
+        ? inputValue.replace(/,/g, ".")
+        : inputValue.slice(0, 5) + "." + inputValue.slice(5);
+  }
+}
 
 function handleInput(e) {
   if (myTimer) myTimer.stop();
