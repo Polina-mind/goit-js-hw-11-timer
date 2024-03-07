@@ -4,7 +4,7 @@
   justify-content: center;
   margin: 0 auto;
   padding: 35px;
-  width: 400px;
+  width: 380px;
   background-color: #6a84b7;
   color: #fff;
   font-family: "Quicksand", "Helvetica", Arial, sans-serif;
@@ -15,7 +15,7 @@
   width: 100%;
   text-align: center;
   background-color: #1f3466;
-  padding: 35px 0;
+  padding: 30px 0;
 }
 
 .days-of-week {
