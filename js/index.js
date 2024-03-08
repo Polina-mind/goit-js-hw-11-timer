@@ -42,8 +42,9 @@ function handleInput(e) {
   if (myTimer) myTimer.stop();
   refs.error.textContent = "";
 
-  const inputData = e.currentTarget.value;
-  if (inputData === "") {
+  const inputValue = e.currentTarget.value;
+
+  if (inputValue === "") {
     refs.text.textContent = "";
     refs.days.textContent = "00";
     refs.hours.textContent = "00";
@@ -54,37 +55,33 @@ function handleInput(e) {
 
   let reg = /^(0[1-9]|[12][0-9]|3[01])[.](0[1-9]|1[012])[.]\d{4}$/;
 
-  if (!reg.test(inputData)) {
+  if (!reg.test(inputValue)) {
     refs.error.textContent = "невірний формат";
   } else {
-    userData = convertDate(inputData);
-
-    const userDate = new Date(userData);
+    const inputDate = new Date(convertDate(inputValue));
     const currentDate = new Date();
 
-    const message =
-      userDate > currentDate
-        ? `До ${inputData} залишилось: `
-        : `Після ${inputData} пройшло: `;
-    refs.text.textContent = message;
+    refs.text.textContent =
+      inputDate > currentDate
+        ? `До ${inputValue} залишилось: `
+        : `Після ${inputValue} пройшло: `;
 
-    myTimer = new CountdownTimer(new Date(userData));
+    myTimer = new CountdownTimer(inputDate);
     myTimer.start();
   }
 }
 
 class CountdownTimer {
-  constructor(targetDate) {
-    this.targetDate = new Date(targetDate);
+  constructor(inputDate) {
+    this.inputDate = inputDate;
   }
 
   intervalId = null;
 
   start() {
     this.intervalId = setInterval(() => {
-      const currentDate = Date.now();
-      const time = this.targetDate.getTime() - currentDate;
-
+      const currentDate = new Date();
+      const time = Math.abs(this.inputDate - currentDate);
       this.transfer(time);
     }, 1000);
   }
@@ -101,10 +98,10 @@ class CountdownTimer {
     const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
     const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
 
-    refs.days.textContent = `${Math.abs(days)}`;
-    refs.hours.textContent = `${Math.abs(hours)}`;
-    refs.mins.textContent = `${Math.abs(mins)}`;
-    refs.secs.textContent = `${Math.abs(secs)}`;
+    refs.days.textContent = days;
+    refs.hours.textContent = hours;
+    refs.mins.textContent = mins;
+    refs.secs.textContent = secs;
   }
 
   pad(value) {
@@ -113,44 +110,9 @@ class CountdownTimer {
 }
 
 function convertDate(inputFormat) {
-  var dt = new Date(inputFormat.split(".").reverse().join("-"));
-  var month = new Intl.DateTimeFormat("en-US", { month: "long" }).format(dt);
-  var newFormat = `${month} ${dt.getDate()}, ${dt.getFullYear()}`;
+  const dt = new Date(inputFormat.split(".").reverse().join("-"));
+  const month = new Intl.DateTimeFormat("en-US", { month: "long" }).format(dt);
+  const newFormat = `${month} ${dt.getDate()}, ${dt.getFullYear()}`;
 
   return newFormat;
 }
-
-// НЕ ЧЕРЕЗ КЛАС
-// const countdownTimer = {
-//   intervalId: null,
-//   targetDate: new Date("Jul 15, 2021"),
-
-//   start() {
-//     this.intervalId = setInterval(() => {
-//       const currentDate = Date.now();
-//       const time = this.targetDate.getTime() - currentDate;
-
-//       this.transfer(time);
-//     }, 1000);
-//   },
-
-//   transfer(time) {
-//     const days = Math.floor(time / (1000 * 60 * 60 * 24));
-//     const hours = this.pad(
-//       Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-//     );
-//     const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
-//     const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
-
-//     refs.days.textContent = `${days}:`;
-//     refs.hours.textContent = `${hours}:`;
-//     refs.mins.textContent = `${mins}:`;
-//     refs.secs.textContent = `${secs}`;
-//   },
-
-//   pad(value) {
-//     return String(value).padStart(2, "0");
-//   },
-// };
-
-// countdownTimer.start();
