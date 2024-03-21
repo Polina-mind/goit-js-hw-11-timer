@@ -20,66 +20,68 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="clock">
-        <div class="inside">
-          <div class="days-of-week">
-            <span id="sun">SUN</span>
-            <span id="mon">MON</span>
-            <span id="tus">TUS</span>
-            <span id="wed">WED</span>
-            <span id="thu">THU</span>
-            <span id="fri">FRI</span>
-            <span id="sat">SAT</span>
+    <article>
+      <div class="container">
+        <div class="clock">
+          <div class="inside">
+            <div class="days-of-week">
+              <span id="sun">SUN</span>
+              <span id="mon">MON</span>
+              <span id="tus">TUS</span>
+              <span id="wed">WED</span>
+              <span id="thu">THU</span>
+              <span id="fri">FRI</span>
+              <span id="sat">SAT</span>
+            </div>
+            <br />
+            <div class="time">
+              <span id="hours">01</span> : <span id="min">01</span> :
+              <span id="sec">01</span> <span id="ampm">AM</span>
+            </div>
+            <div class="date">
+              <span id="year">2023</span>
+              <span id="month">JAN</span>
+              <span id="day">01</span>
+            </div>
           </div>
-          <br />
-          <div class="time">
-            <span id="hours">01</span> : <span id="min">01</span> :
-            <span id="sec">01</span> <span id="ampm">AM</span>
+        </div>
+
+        <h1>Скільки часу до важливої дати?</h1>
+
+        <label
+          >Введіть дату:<input
+            type="input"
+            maxlength="10"
+            placeholder="dd.mm.yyyy"
+        /></label>
+        <p class="error"></p>
+
+        <p class="text"></p>
+
+        <div class="timer" id="timer-1">
+          <div class="field">
+            <span class="value" data-value="days">00</span>
+            <span class="label">днів</span>
           </div>
-          <div class="date">
-            <span id="year">2023</span>
-            <span id="month">JAN</span>
-            <span id="day">01</span>
+
+          <div class="field">
+            <span class="value" data-value="hours">00</span>
+            <span class="label">год</span>
+          </div>
+
+          <div class="field">
+            <span class="value" data-value="mins">00</span>
+            <span class="label">хв</span>
+          </div>
+
+          <div class="field">
+            <span class="value" data-value="secs">00</span>
+            <span class="label">сек</span>
           </div>
         </div>
       </div>
-
-      <h1>Скільки часу до важливої дати?</h1>
-
-      <label
-        >Введіть дату:<input
-          type="input"
-          maxlength="10"
-          placeholder="dd.mm.yyyy"
-      /></label>
-      <p class="error"></p>
-
-      <p class="text"></p>
-
-      <div class="timer" id="timer-1">
-        <div class="field">
-          <span class="value" data-value="days">00</span>
-          <span class="label">днів</span>
-        </div>
-
-        <div class="field">
-          <span class="value" data-value="hours">00</span>
-          <span class="label">год</span>
-        </div>
-
-        <div class="field">
-          <span class="value" data-value="mins">00</span>
-          <span class="label">хв</span>
-        </div>
-
-        <div class="field">
-          <span class="value" data-value="secs">00</span>
-          <span class="label">сек</span>
-        </div>
-      </div>
-    </div>
-    <p class="copy">&copy; Polina</p>
+      <p class="copy">&copy; Polina</p>
+    </article>
 
     <script src="./js/clock.js" type="module"></script>
     <script src="./js/index.js" type="module"></script>

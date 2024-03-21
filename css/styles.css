@@ -7,24 +7,25 @@
 }
 
 body {
-  position: relative;
   margin: 0;
-  padding-bottom: 30px;
-  min-height: 100vh;
-  width: 100vw;
-  overflow: auto;
-
   font-size: 16px;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: rgb(51, 51, 51);
-  text-align: center;
+}
+
+article {
+  position: relative;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  width: 100vw;
 }
 
 .container {
-  margin: 0 auto 30px;
-  width: 375px;
+  margin: 0 auto 50px;
+  min-width: 375px;
+  width: 100%;
   text-align: center;
 }
 
@@ -62,14 +63,12 @@ input {
 }
 
 .error {
-  margin: 0;
-  margin-left: 125px;
+  margin: 0 0 0 125px;
   color: red;
 }
 
 .timer {
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   gap: 5px;
@@ -90,7 +89,7 @@ input {
 .copy {
   position: absolute;
   left: 50%;
-  bottom: 0;
+  bottom: 10px;
   transform: translate(-50%, -50%);
   margin: 0;
   font-size: 12px;
